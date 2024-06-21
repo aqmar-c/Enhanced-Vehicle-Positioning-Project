@@ -108,21 +108,15 @@ preprocessed data.
 
 fully connected layers with the following dimensions:
 
-○
-
-○
-
-○
-
-The first hidden layer (fc2) takes the output from fc1 and reduces the
+- The first hidden layer (fc2) takes the output from fc1 and reduces the
 
 dimension to 128 neurons.
 
-The second hidden layer (fc3) further compresses the information to 64
+- The second hidden layer (fc3) further compresses the information to 64
 
 neurons.
 
-The third hidden layer (fc4) condenses the information to 32 neurons.
+- The third hidden layer (fc4) condenses the information to 32 neurons.
 
 Each hidden layer uses a ReLU activation function to introduce non-linearity into the model,
 
@@ -140,51 +134,38 @@ a Softmax activation.
 
 **Training Process:**
 
-●
 
-●
-
-**Data Preparation**: The CSI data is flattened and wrapped in TensorDataset objects,
+*Data Preparation*: The CSI data is flattened and wrapped in TensorDataset objects,
 
 which are then loaded into DataLoader objects to handle mini-batch training.
 
-**Loss Function**: The CrossEntropyLoss function is used, which is standard for
+*Loss Function*: The CrossEntropyLoss function is used, which is standard for
 
 multi-class classification problems. It combines LogSoftmax and NLLLoss in one
 
 single class.
 
-●
 
-●
-
-**Optimizer**: The Adam optimizer is employed to adjust the weights of the network with a
+*Optimizer*: The Adam optimizer is employed to adjust the weights of the network with a
 
 learning rate of 0.001. Adam is chosen for its adaptive learning rate capabilities, which
 
 often leads to better performance on a wide range of problems.
 
-**Training Loop**: The network is trained for a number of epochs (iterations over the entire
+*Training Loop*: The network is trained for a number of epochs (iterations over the entire
 
 dataset), performing the following steps in each epoch:
 
-○
 
-○
+- Forward pass to compute the predictions (outputs) from the inputs.
 
-○
+- Compute the loss using the criterion.
 
-○
+- Backpropagate the errors through the network (loss.backward()).
 
-Forward pass to compute the predictions (outputs) from the inputs.
+- Update the weights with the optimizer.step() function.
 
-Compute the loss using the criterion.
-
-Backpropagate the errors through the network (loss.backward()).
-
-Update the weights with the optimizer.step() function.
-
-After each epoch, the loss is printed out to monitor the training process.
+- After each epoch, the loss is printed out to monitor the training process.
 
 
 
